@@ -1,10 +1,10 @@
 {
-  "name": "yoomoney/yookassa-sdk-php",
+  "name": "mottor/yookassa-sdk-php",
   "description": "This is a developer tool for integration with YooMoney.",
   "type": "library",
   "license": "MIT",
   "homepage": "https://yookassa.ru/developers/api",
-  "keywords": ["yoomoney", "yookassa", "payments", "api", "sdk"],
+  "keywords": ["yookassa", "payments", "sdk"],
   "authors": [
     {
       "name": "YooMoney",
