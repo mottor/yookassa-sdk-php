@@ -3,7 +3,7 @@
 /*
 * The MIT License
 *
-* Copyright (c) 2024 "YooMoney", NBСO LLC
+* Copyright (c) 2025 "YooMoney", NBСO LLC
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -250,8 +250,8 @@ class ReceiptItemTest extends AbstractTestCase
         self::assertNotNull($instance->vat_code);
         self::assertEquals($value, is_array($value) ? $instance->getVatCode()->toArray() : $instance->getVatCode());
         self::assertEquals($value, is_array($value) ? $instance->vat_code->toArray() : $instance->vat_code);
-        self::assertLessThanOrEqual(6, is_string($instance->getVatCode()) ? mb_strlen($instance->getVatCode()) : $instance->getVatCode());
-        self::assertLessThanOrEqual(6, is_string($instance->vat_code) ? mb_strlen($instance->vat_code) : $instance->vat_code);
+        self::assertLessThanOrEqual(10, is_string($instance->getVatCode()) ? mb_strlen($instance->getVatCode()) : $instance->getVatCode());
+        self::assertLessThanOrEqual(10, is_string($instance->vat_code) ? mb_strlen($instance->vat_code) : $instance->vat_code);
         self::assertGreaterThanOrEqual(1, is_string($instance->getVatCode()) ? mb_strlen($instance->getVatCode()) : $instance->getVatCode());
         self::assertGreaterThanOrEqual(1, is_string($instance->vat_code) ? mb_strlen($instance->vat_code) : $instance->vat_code);
         self::assertIsNumeric($instance->getVatCode());

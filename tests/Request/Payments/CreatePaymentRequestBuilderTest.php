@@ -3,7 +3,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2024 "YooMoney", NBСO LLC
+ * Copyright (c) 2025 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,6 @@ use YooKassa\Model\MonetaryAmount;
 use YooKassa\Model\Payment\ConfirmationType;
 use YooKassa\Model\Payment\Payment;
 use YooKassa\Model\Payment\PaymentMethodType;
-use YooKassa\Model\Payment\Recipient;
 use YooKassa\Model\Receipt\IndustryDetails;
 use YooKassa\Model\Receipt\OperationalDetails;
 use YooKassa\Model\Receipt\PaymentMode;
@@ -50,6 +49,7 @@ use YooKassa\Request\Payments\CreatePaymentRequestBuilder;
 use YooKassa\Request\Payments\PaymentData\PaymentDataQiwi;
 use YooKassa\Request\Payments\ReceiverData\ReceiverDigitalWallet;
 use YooKassa\Request\Payments\ReceiverData\ReceiverType;
+use YooKassa\Request\Payments\Recipient;
 use YooKassa\Validator\Exceptions\ValidatorParameterException;
 
 /**
@@ -61,31 +61,6 @@ use YooKassa\Validator\Exceptions\ValidatorParameterException;
  */
 class CreatePaymentRequestBuilderTest extends TestCase
 {
-    /**
-     * @dataProvider validDataProvider
-     *
-     * @param mixed $options
-     *
-     * @throws Exception
-     */
-    public function testSetAccountId(mixed $options): void
-    {
-        $builder = new CreatePaymentRequestBuilder();
-
-        $instance = $builder->build($this->getRequiredData());
-        self::assertNull($instance->getRecipient());
-
-        $builder->setAccountId($options['accountId']);
-        $instance = $builder->build($this->getRequiredData('accountId'));
-
-        if (empty($options['accountId'])) {
-            self::assertNull($instance->getRecipient());
-        } else {
-            self::assertNotNull($instance->getRecipient());
-            self::assertEquals($options['accountId'], $instance->getRecipient()->getAccountId());
-        }
-    }
-
     /**
      * @dataProvider validDataProvider
      *
@@ -379,7 +354,7 @@ class CreatePaymentRequestBuilderTest extends TestCase
                     [
                         'price' => [1],
                         'quantity' => -1.4,
-                        'vatCode' => 10,
+                        'vatCode' => 11,
                     ],
                 ],
             ],
@@ -407,7 +382,7 @@ class CreatePaymentRequestBuilderTest extends TestCase
                         'title' => 'test',
                         'price' => [123],
                         'quantity' => 1.4,
-                        'vatCode' => 7,
+                        'vatCode' => 12,
                     ],
                 ],
             ],
@@ -425,7 +400,7 @@ class CreatePaymentRequestBuilderTest extends TestCase
                     [
                         'title' => 'test',
                         'price' => [1],
-                        'vatCode' => 7,
+                        'vatCode' => 20,
                     ],
                 ],
             ],
@@ -830,7 +805,6 @@ class CreatePaymentRequestBuilderTest extends TestCase
     public function testSetRecipient(mixed $options): void
     {
         $recipient = new Recipient();
-        $recipient->setAccountId($options['accountId']);
         $recipient->setGatewayId($options['gatewayId']);
 
         $builder = new CreatePaymentRequestBuilder();
@@ -841,7 +815,6 @@ class CreatePaymentRequestBuilderTest extends TestCase
 
         $builder = new CreatePaymentRequestBuilder();
         $builder->setRecipient([
-            'account_id' => $options['accountId'],
             'gateway_id' => $options['gatewayId'],
         ]);
         $instance = $builder->build($this->getRequiredData());

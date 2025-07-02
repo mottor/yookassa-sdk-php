@@ -3,7 +3,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2024 "YooMoney", NBСO LLC
+ * Copyright (c) 2025 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -53,8 +53,8 @@ use YooKassa\Model\AmountInterface;
  * @property Supplier $supplier Информация о поставщике товара или услуги (тег в 54 ФЗ — 1224)
  * @property string $agentType Тип посредника, реализующего товар или услугу
  * @property string $agent_type Тип посредника, реализующего товар или услугу
- * @property int $vatCode Ставка НДС (тег в 54 ФЗ — 1199), число 1-6
- * @property int $vat_code Ставка НДС (тег в 54 ФЗ — 1199), число 1-6
+ * @property int $vatCode Ставка НДС (тег в 54 ФЗ — 1199), число 1-10
+ * @property int $vat_code Ставка НДС (тег в 54 ФЗ — 1199), число 1-10
  * @property string $paymentSubject Признак предмета расчета (тег в 54 ФЗ — 1212)
  * @property string $payment_subject Признак предмета расчета (тег в 54 ФЗ — 1212)
  * @property string $paymentMode Признак способа расчета (тег в 54 ФЗ — 1214)
@@ -128,12 +128,12 @@ class ReceiptItem extends AbstractObject implements ReceiptItemInterface
     private ?AmountInterface $_amount = null;
 
     /**
-     * @var null|int Ставка НДС, число 1-6 (тег в 54 ФЗ — 1199)
+     * @var null|int Ставка НДС, число 1-10 (тег в 54 ФЗ — 1199)
      */
     #[Assert\NotBlank]
     #[Assert\Type('int')]
     #[Assert\GreaterThanOrEqual(1)]
-    #[Assert\LessThanOrEqual(6)]
+    #[Assert\LessThanOrEqual(10)]
     private ?int $_vat_code = null;
 
     /**
@@ -315,7 +315,7 @@ class ReceiptItem extends AbstractObject implements ReceiptItemInterface
     /**
      * Возвращает ставку НДС
      *
-     * @return null|int Ставка НДС, число 1-6, или null, если ставка не задана
+     * @return null|int Ставка НДС, число 1-10, или null, если ставка не задана
      */
     public function getVatCode(): ?int
     {
@@ -325,7 +325,7 @@ class ReceiptItem extends AbstractObject implements ReceiptItemInterface
     /**
      * Устанавливает ставку НДС
      *
-     * @param null|int $value Ставка НДС, число 1-6
+     * @param null|int $value Ставка НДС, число 1-10
      *
      * @return self
      *

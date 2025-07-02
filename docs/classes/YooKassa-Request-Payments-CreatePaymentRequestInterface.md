@@ -102,10 +102,10 @@ Interface CreatePaymentRequestInterface.
 ---
 ## Methods
 <a name="method_getRecipient" class="anchor"></a>
-#### public getRecipient() : null|\YooKassa\Model\Payment\RecipientInterface
+#### public getRecipient() : null|\YooKassa\Request\Payments\Recipient
 
 ```php
-public getRecipient() : null|\YooKassa\Model\Payment\RecipientInterface
+public getRecipient() : null|\YooKassa\Request\Payments\Recipient
 ```
 
 **Summary**
@@ -115,7 +115,7 @@ public getRecipient() : null|\YooKassa\Model\Payment\RecipientInterface
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
 
-**Returns:** null|\YooKassa\Model\Payment\RecipientInterface - Объект с информацией о получателе платежа или null, если получатель не задан
+**Returns:** null|\YooKassa\Request\Payments\Recipient - Объект с информацией о получателе платежа или null, если получатель не задан
 
 
 <a name="method_hasRecipient" class="anchor"></a>
@@ -139,7 +139,7 @@ public hasRecipient() : bool
 #### public setRecipient() : mixed
 
 ```php
-public setRecipient(null|\YooKassa\Model\Payment\RecipientInterface $recipient) : mixed
+public setRecipient(null|\YooKassa\Request\Payments\Recipient $recipient) : mixed
 ```
 
 **Summary**
@@ -152,7 +152,7 @@ public setRecipient(null|\YooKassa\Model\Payment\RecipientInterface $recipient) 
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">null OR \YooKassa\Model\Payment\RecipientInterface</code> | recipient  | Инстанс объекта информации о получателе платежа или null |
+| <code lang="php">null OR \YooKassa\Request\Payments\Recipient</code> | recipient  | Инстанс объекта информации о получателе платежа или null |
 
 **Returns:** mixed - 
 
@@ -1015,10 +1015,10 @@ public setReceiver(null|array|\YooKassa\Request\Payments\ReceiverData\AbstractRe
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 32](../reports/deprecated.md)
+* [Deprecated - 33](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2024-10-28 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2025-07-01 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2024 YooMoney
+&copy; 2025 YooMoney

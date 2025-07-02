@@ -49,6 +49,7 @@
 | [\YooKassa\Request\Payments\PaymentsRequestBuilder](../classes/YooKassa-Request-Payments-PaymentsRequestBuilder.md) | Класс, представляющий модель PaymentsRequestBuilder. |
 | [\YooKassa\Request\Payments\PaymentsRequestSerializer](../classes/YooKassa-Request-Payments-PaymentsRequestSerializer.md) | Класс, представляющий модель PaymentsRequestSerializer. |
 | [\YooKassa\Request\Payments\PaymentsResponse](../classes/YooKassa-Request-Payments-PaymentsResponse.md) | Класс, представляющий модель PaymentsResponse. |
+| [\YooKassa\Request\Payments\Recipient](../classes/YooKassa-Request-Payments-Recipient.md) | Класс, представляющий модель Recipient. |
 | [\YooKassa\Request\Payments\TransferData](../classes/YooKassa-Request-Payments-TransferData.md) | Класс, представляющий модель Transfer. |
 
 ---
@@ -62,10 +63,10 @@
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 32](../reports/deprecated.md)
+* [Deprecated - 33](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2024-10-28 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2025-07-01 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2024 YooMoney
+&copy; 2025 YooMoney

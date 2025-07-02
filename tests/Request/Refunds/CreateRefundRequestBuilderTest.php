@@ -3,7 +3,7 @@
 /*
 * The MIT License
 *
-* Copyright (c) 2024 "YooMoney", NBСO LLC
+* Copyright (c) 2025 "YooMoney", NBСO LLC
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -372,7 +372,7 @@ class CreateRefundRequestBuilderTest extends TestCase
                     [
                         'price' => [1],
                         'quantity' => -1.4,
-                        'vatCode' => 10,
+                        'vatCode' => 11,
                     ],
                 ],
             ],
@@ -400,7 +400,7 @@ class CreateRefundRequestBuilderTest extends TestCase
                         'title' => 'test',
                         'price' => [123],
                         'quantity' => 1.4,
-                        'vatCode' => 7,
+                        'vatCode' => 12,
                     ],
                 ],
             ],
@@ -418,7 +418,7 @@ class CreateRefundRequestBuilderTest extends TestCase
                     [
                         'title' => 'test',
                         'price' => [1],
-                        'vatCode' => 7,
+                        'vatCode' => 20,
                     ],
                 ],
             ],

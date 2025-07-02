@@ -50,8 +50,8 @@
 | public | [$productCode](../classes/YooKassa-Model-Receipt-ReceiptItem.md#property_productCode) |  | Код товара (тег в 54 ФЗ — 1162) |
 | public | [$quantity](../classes/YooKassa-Model-Receipt-ReceiptItem.md#property_quantity) |  | Количество (тег в 54 ФЗ — 1023) |
 | public | [$supplier](../classes/YooKassa-Model-Receipt-ReceiptItem.md#property_supplier) |  | Информация о поставщике товара или услуги (тег в 54 ФЗ — 1224) |
-| public | [$vat_code](../classes/YooKassa-Model-Receipt-ReceiptItem.md#property_vat_code) |  | Ставка НДС (тег в 54 ФЗ — 1199), число 1-6 |
-| public | [$vatCode](../classes/YooKassa-Model-Receipt-ReceiptItem.md#property_vatCode) |  | Ставка НДС (тег в 54 ФЗ — 1199), число 1-6 |
+| public | [$vat_code](../classes/YooKassa-Model-Receipt-ReceiptItem.md#property_vat_code) |  | Ставка НДС (тег в 54 ФЗ — 1199), число 1-10 |
+| public | [$vatCode](../classes/YooKassa-Model-Receipt-ReceiptItem.md#property_vatCode) |  | Ставка НДС (тег в 54 ФЗ — 1199), число 1-10 |
 
 ---
 ### Methods
@@ -531,7 +531,7 @@ ADD_PROPS_MAX_LENGTH = 64 : int
 ---
 ***Description***
 
-Ставка НДС (тег в 54 ФЗ — 1199), число 1-6
+Ставка НДС (тег в 54 ФЗ — 1199), число 1-10
 
 **Type:** <a href="../int"><abbr title="int">int</abbr></a>
 
@@ -543,7 +543,7 @@ ADD_PROPS_MAX_LENGTH = 64 : int
 ---
 ***Description***
 
-Ставка НДС (тег в 54 ФЗ — 1199), число 1-6
+Ставка НДС (тег в 54 ФЗ — 1199), число 1-10
 
 **Type:** <a href="../int"><abbr title="int">int</abbr></a>
 
@@ -1070,7 +1070,7 @@ public getVatCode() : null|int
 **Details:**
 * Inherited From: [\YooKassa\Model\Receipt\ReceiptItem](../classes/YooKassa-Model-Receipt-ReceiptItem.md)
 
-**Returns:** null|int - Ставка НДС, число 1-6, или null, если ставка не задана
+**Returns:** null|int - Ставка НДС, число 1-10, или null, если ставка не задана
 
 
 <a name="method_increasePrice" class="anchor"></a>
@@ -1702,10 +1702,10 @@ protected validatePropertyValue(string $propertyName, mixed $propertyValue) : mi
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 32](../reports/deprecated.md)
+* [Deprecated - 33](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2024-10-28 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2025-07-01 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2024 YooMoney
+&copy; 2025 YooMoney

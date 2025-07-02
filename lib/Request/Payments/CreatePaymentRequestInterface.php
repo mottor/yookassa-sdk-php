@@ -3,7 +3,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2024 "YooMoney", NBСO LLC
+ * Copyright (c) 2025 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -46,7 +46,7 @@ use YooKassa\Request\Payments\ReceiverData\AbstractReceiver;
  * @author   cms@yoomoney.ru
  * @link     https://yookassa.ru/developers/api
  *
- * @property RecipientInterface $recipient Получатель платежа, если задан
+ * @property Recipient $recipient Получатель платежа, если задан
  * @property AmountInterface $amount Сумма создаваемого платежа
  * @property string $description Описание транзакции
  * @property ReceiptInterface $receipt Данные фискального чека 54-ФЗ
@@ -73,9 +73,9 @@ interface CreatePaymentRequestInterface
     /**
      * Возвращает объект получателя платежа.
      *
-     * @return null|RecipientInterface Объект с информацией о получателе платежа или null, если получатель не задан
+     * @return null|Recipient Объект с информацией о получателе платежа или null, если получатель не задан
      */
-    public function getRecipient(): ?RecipientInterface;
+    public function getRecipient(): ?Recipient;
 
     /**
      * Проверяет наличие получателя платежа в запросе.
@@ -87,9 +87,9 @@ interface CreatePaymentRequestInterface
     /**
      * Устанавливает объект с информацией о получателе платежа.
      *
-     * @param null|RecipientInterface $recipient Инстанс объекта информации о получателе платежа или null
+     * @param null|Recipient $recipient Инстанс объекта информации о получателе платежа или null
      */
-    public function setRecipient(?RecipientInterface $recipient);
+    public function setRecipient(?Recipient $recipient);
 
     /**
      * Возвращает сумму заказа.

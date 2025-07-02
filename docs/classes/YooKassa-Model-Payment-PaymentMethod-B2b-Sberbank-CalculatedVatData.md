@@ -20,7 +20,7 @@
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [$amount](../classes/YooKassa-Model-Payment-PaymentMethod-B2b-Sberbank-CalculatedVatData.md#property_amount) |  | Сумма НДС |
-| public | [$rate](../classes/YooKassa-Model-Payment-PaymentMethod-B2b-Sberbank-CalculatedVatData.md#property_rate) |  | Налоговая ставка (в процентах). Возможные значения: ~`7`, ~`10`, ~`18` и ~`20`. |
+| public | [$rate](../classes/YooKassa-Model-Payment-PaymentMethod-B2b-Sberbank-CalculatedVatData.md#property_rate) |  | Налоговая ставка (в процентах). Возможные значения: ~`5`, ~`7`, ~`10`, ~`18` и ~`20`. |
 | public | [$type](../classes/YooKassa-Model-Payment-PaymentMethod-B2b-Sberbank-AbstractVatData.md#property_type) |  | Способ расчёта НДС |
 | protected | [$_type](../classes/YooKassa-Model-Payment-PaymentMethod-B2b-Sberbank-AbstractVatData.md#property__type) |  |  |
 
@@ -88,7 +88,7 @@
 ---
 ***Description***
 
-Налоговая ставка (в процентах). Возможные значения: ~`7`, ~`10`, ~`18` и ~`20`.
+Налоговая ставка (в процентах). Возможные значения: ~`5`, ~`7`, ~`10`, ~`18` и ~`20`.
 
 **Type:** <a href="../string"><abbr title="string">string</abbr></a>
 
@@ -551,10 +551,10 @@ protected validatePropertyValue(string $propertyName, mixed $propertyValue) : mi
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 32](../reports/deprecated.md)
+* [Deprecated - 33](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2024-10-28 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2025-07-01 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2024 YooMoney
+&copy; 2025 YooMoney

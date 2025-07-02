@@ -3,7 +3,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2024 "YooMoney", NBСO LLC
+ * Copyright (c) 2025 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,6 +28,7 @@ namespace YooKassa\Model\Payment\PaymentMethod;
 
 use Exception;
 use YooKassa\Common\AbstractObject;
+use YooKassa\Model\Payment\PaymentMethodStatus;
 use YooKassa\Model\Payment\PaymentMethodType;
 use YooKassa\Validator\Constraints as Assert;
 
@@ -45,6 +46,7 @@ use YooKassa\Validator\Constraints as Assert;
  * @property string $id Идентификатор записи о сохраненных платежных данных
  * @property bool $saved Возможность многократного использования
  * @property string $title Название метода оплаты
+ * @property string $status Название метода оплаты
  */
 abstract class AbstractPaymentMethod extends AbstractObject
 {
@@ -82,6 +84,16 @@ abstract class AbstractPaymentMethod extends AbstractObject
      */
     #[Assert\Type('string')]
     protected ?string $_title = null;
+
+    /**
+     * Статус проверки и сохранения способа оплаты.
+     *
+     * @var string|null
+     */
+    #[Assert\NotBlank]
+    #[Assert\Type('string')]
+    #[Assert\Choice(callback: [PaymentMethodStatus::class, 'getValidValues'])]
+    protected ?string $_status = null;
 
     /**
      * Возвращает тип платежного метода.
@@ -143,7 +155,7 @@ abstract class AbstractPaymentMethod extends AbstractObject
     /**
      * Устанавливает признак возможности многократного использования.
      *
-     * @param bool|array|null $saved С помощью сохраненного способа оплаты можно проводить [безакцептные списания](/developers/payment-acceptance/scenario-extensions/recurring-payments).
+     * @param bool|null $saved С помощью сохраненного способа оплаты можно проводить [безакцептные списания](/developers/payment-acceptance/scenario-extensions/recurring-payments).
      *
      * @throws Exception
      * @return self
@@ -151,6 +163,29 @@ abstract class AbstractPaymentMethod extends AbstractObject
     public function setSaved(mixed $saved = null): self
     {
         $this->_saved = $this->validatePropertyValue('_saved', $saved);
+        return $this;
+    }
+
+    /**
+     * Возвращает status.
+     *
+     * @return string|null
+     */
+    public function getStatus(): ?string
+    {
+        return $this->_status;
+    }
+
+    /**
+     * Устанавливает status.
+     *
+     * @param string|null $status
+     *
+     * @return self
+     */
+    public function setStatus(?string $status = null): self
+    {
+        $this->_status = $this->validatePropertyValue('_status', $status);
         return $this;
     }
 

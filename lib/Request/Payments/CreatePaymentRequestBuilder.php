@@ -3,7 +3,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2024 "YooMoney", NBСO LLC
+ * Copyright (c) 2025 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,8 +33,6 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\Metadata;
-use YooKassa\Model\Payment\Recipient;
-use YooKassa\Model\Payment\RecipientInterface;
 use YooKassa\Model\Receipt\IndustryDetails;
 use YooKassa\Request\Payments\ConfirmationAttributes\AbstractConfirmationAttributes;
 use YooKassa\Request\Payments\ConfirmationAttributes\ConfirmationAttributesFactory;
@@ -81,6 +79,8 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     /**
      * Устанавливает идентификатор магазина получателя платежа.
      *
+     * @deprecated Больше не используется
+     *
      * @param string $value Идентификатор магазина
      *
      * @return CreatePaymentRequestBuilder Инстанс текущего билдера
@@ -91,8 +91,6 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
      */
     public function setAccountId(string $value): CreatePaymentRequestBuilder
     {
-        $this->recipient->setAccountId($value);
-
         return $this;
     }
 
@@ -116,7 +114,7 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     /**
      * Устанавливает получателя платежа из объекта или ассоциативного массива.
      *
-     * @param array|RecipientInterface|null $value Получатель платежа
+     * @param array|Recipient|null $value Получатель платежа
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если передан аргумент не валидного типа
      */
@@ -124,8 +122,7 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     {
         if (is_array($value)) {
             $this->recipient->fromArray($value);
-        } elseif ($value instanceof RecipientInterface) {
-            $this->recipient->setAccountId($value->getAccountId());
+        } elseif ($value instanceof Recipient) {
             $this->recipient->setGatewayId($value->getGatewayId());
         } else {
             throw new InvalidPropertyValueTypeException('Invalid recipient value', 0, 'recipient', $value);
@@ -188,7 +185,7 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если был передан объект невалидного типа
      */
-    public function setPaymentMethodData(mixed $value, array $options = null): CreatePaymentRequestBuilder
+    public function setPaymentMethodData(mixed $value, ?array $options = null): CreatePaymentRequestBuilder
     {
         if (is_string($value) && '' !== $value) {
             if (empty($options)) {
@@ -400,7 +397,7 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
      * @return CreatePaymentRequestInterface|AbstractRequestInterface Инстанс объекта запроса
      *
      */
-    public function build(array $options = null): AbstractRequestInterface
+    public function build(?array $options = null): AbstractRequestInterface
     {
         if (!empty($options)) {
             $this->setOptions($options);

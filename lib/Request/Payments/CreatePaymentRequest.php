@@ -3,7 +3,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2024 "YooMoney", NBСO LLC
+ * Copyright (c) 2025 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,8 +32,6 @@ use YooKassa\Model\AmountInterface;
 use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\Metadata;
 use YooKassa\Model\Payment\Payment;
-use YooKassa\Model\Payment\Recipient;
-use YooKassa\Model\Payment\RecipientInterface;
 use YooKassa\Model\Receipt\ReceiptInterface;
 use YooKassa\Request\Payments\ConfirmationAttributes\AbstractConfirmationAttributes;
 use YooKassa\Request\Payments\ConfirmationAttributes\ConfirmationAttributesFactory;
@@ -55,7 +53,7 @@ use YooKassa\Validator\Constraints as Assert;
  *
  * @example 02-builder.php 11 75 Пример использования билдера
  *
- * @property RecipientInterface $recipient Получатель платежа, если задан
+ * @property Recipient $recipient Получатель платежа, если задан
  * @property AmountInterface $amount Сумма создаваемого платежа
  * @property string $description Описание транзакции
  * @property ReceiptInterface $receipt Данные фискального чека 54-ФЗ
@@ -82,11 +80,11 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     public const MAX_LENGTH_PAYMENT_TOKEN = 10240;
 
     /**
-     * @var RecipientInterface|null Получатель платежа
+     * @var Recipient|null Получатель платежа
      */
     #[Assert\Valid]
     #[Assert\Type(Recipient::class)]
-    private ?RecipientInterface $_recipient = null;
+    private ?Recipient $_recipient = null;
 
     /**
      * @var string|null Описание транзакции
@@ -216,9 +214,9 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     /**
      * Возвращает объект получателя платежа.
      *
-     * @return null|RecipientInterface Объект с информацией о получателе платежа или null, если получатель не задан
+     * @return null|Recipient Объект с информацией о получателе платежа или null, если получатель не задан
      */
-    public function getRecipient(): ?RecipientInterface
+    public function getRecipient(): ?Recipient
     {
         return $this->_recipient;
     }
@@ -236,7 +234,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     /**
      * Устанавливает объект с информацией о получателе платежа.
      *
-     * @param null|array|RecipientInterface $recipient Инстанс объекта информации о получателе платежа или null
+     * @param null|array|Recipient $recipient Инстанс объекта информации о получателе платежа или null
      */
     public function setRecipient(mixed $recipient): self
     {

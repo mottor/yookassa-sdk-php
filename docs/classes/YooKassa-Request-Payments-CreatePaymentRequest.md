@@ -504,13 +504,13 @@ IPv4 или IPv6-адрес покупателя. Если не указан, и
 
 
 <a name="property_recipient"></a>
-#### public $recipient : \YooKassa\Model\Payment\RecipientInterface
+#### public $recipient : \YooKassa\Request\Payments\Recipient
 ---
 ***Description***
 
 Получатель платежа, если задан
 
-**Type:** <a href="../classes/YooKassa-Model-Payment-RecipientInterface.html"><abbr title="\YooKassa\Model\Payment\RecipientInterface">RecipientInterface</abbr></a>
+**Type:** <a href="../classes/YooKassa-Request-Payments-Recipient.html"><abbr title="\YooKassa\Request\Payments\Recipient">Recipient</abbr></a>
 
 **Details:**
 
@@ -1033,10 +1033,10 @@ public getReceiver() : \YooKassa\Request\Payments\ReceiverData\AbstractReceiver|
 
 
 <a name="method_getRecipient" class="anchor"></a>
-#### public getRecipient() : null|\YooKassa\Model\Payment\RecipientInterface
+#### public getRecipient() : null|\YooKassa\Request\Payments\Recipient
 
 ```php
-public getRecipient() : null|\YooKassa\Model\Payment\RecipientInterface
+public getRecipient() : null|\YooKassa\Request\Payments\Recipient
 ```
 
 **Summary**
@@ -1046,7 +1046,7 @@ public getRecipient() : null|\YooKassa\Model\Payment\RecipientInterface
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequest](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md)
 
-**Returns:** null|\YooKassa\Model\Payment\RecipientInterface - Объект с информацией о получателе платежа или null, если получатель не задан
+**Returns:** null|\YooKassa\Request\Payments\Recipient - Объект с информацией о получателе платежа или null, если получатель не задан
 
 
 <a name="method_getSavePaymentMethod" class="anchor"></a>
@@ -1904,7 +1904,7 @@ public setReceiver(\YooKassa\Request\Payments\ReceiverData\AbstractReceiver|arra
 #### public setRecipient() : self
 
 ```php
-public setRecipient(null|array|\YooKassa\Model\Payment\RecipientInterface $recipient) : self
+public setRecipient(null|array|\YooKassa\Request\Payments\Recipient $recipient) : self
 ```
 
 **Summary**
@@ -1917,7 +1917,7 @@ public setRecipient(null|array|\YooKassa\Model\Payment\RecipientInterface $recip
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">null OR array OR \YooKassa\Model\Payment\RecipientInterface</code> | recipient  | Инстанс объекта информации о получателе платежа или null |
+| <code lang="php">null OR array OR \YooKassa\Request\Payments\Recipient</code> | recipient  | Инстанс объекта информации о получателе платежа или null |
 
 **Returns:** self - 
 
@@ -2076,10 +2076,10 @@ protected validatePropertyValue(string $propertyName, mixed $propertyValue) : mi
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 32](../reports/deprecated.md)
+* [Deprecated - 33](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2024-10-28 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2025-07-01 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2024 YooMoney
+&copy; 2025 YooMoney

@@ -122,14 +122,15 @@
 #### [lib/Request/Payments/CreatePaymentRequest.php](../../lib/Request/Payments/CreatePaymentRequest.php)
 | Line | Element | Description |
 | ---- | ------- | ----------- |
-| 558 | \YooKassa\Request\Payments\CreatePaymentRequest::getFraudData() | Больше не поддерживается. Вместо него нужно использовать `getReceiver()` |
-| 569 | \YooKassa\Request\Payments\CreatePaymentRequest::setFraudData() | Больше не поддерживается. Вместо него нужно использовать `setReceiver()` |
-| 580 | \YooKassa\Request\Payments\CreatePaymentRequest::hasFraudData() | Больше не поддерживается. Вместо него нужно использовать `hasReceiver()` |
+| 556 | \YooKassa\Request\Payments\CreatePaymentRequest::getFraudData() | Больше не поддерживается. Вместо него нужно использовать `getReceiver()` |
+| 567 | \YooKassa\Request\Payments\CreatePaymentRequest::setFraudData() | Больше не поддерживается. Вместо него нужно использовать `setReceiver()` |
+| 578 | \YooKassa\Request\Payments\CreatePaymentRequest::hasFraudData() | Больше не поддерживается. Вместо него нужно использовать `hasReceiver()` |
 <a id="lib/Request/Payments/CreatePaymentRequestBuilder.php"></a>
 #### [lib/Request/Payments/CreatePaymentRequestBuilder.php](../../lib/Request/Payments/CreatePaymentRequestBuilder.php)
 | Line | Element | Description |
 | ---- | ------- | ----------- |
-| 332 | \YooKassa\Request\Payments\CreatePaymentRequestBuilder::setFraudData() | Больше не поддерживается. Вместо него нужно использовать `setReceiver()` |
+| 92 | \YooKassa\Request\Payments\CreatePaymentRequestBuilder::setAccountId() | Больше не используется |
+| 329 | \YooKassa\Request\Payments\CreatePaymentRequestBuilder::setFraudData() | Больше не поддерживается. Вместо него нужно использовать `setReceiver()` |
 <a id="lib/Request/Payments/FraudData.php"></a>
 #### [lib/Request/Payments/FraudData.php](../../lib/Request/Payments/FraudData.php)
 | Line | Element | Description |
@@ -162,10 +163,10 @@
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 32](../reports/deprecated.md)
+* [Deprecated - 33](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2024-10-28 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2025-07-01 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2024 YooMoney
+&copy; 2025 YooMoney

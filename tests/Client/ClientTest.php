@@ -326,7 +326,7 @@ class ClientTest extends TestCase
      * @throws TooManyRequestsException
      * @throws UnauthorizedException
      */
-    public function testGetPaymentInfo(mixed $paymentId, string $exceptionClassName = null): void
+    public function testGetPaymentInfo(mixed $paymentId, ?string $exceptionClassName = null): void
     {
         $curlClientStub = $this->getCurlClientStub();
         $curlClientStub
@@ -538,7 +538,7 @@ class ClientTest extends TestCase
      * @throws TooManyRequestsException
      * @throws UnauthorizedException
      */
-    public function testPaymentIdCapturePayment(mixed $paymentId, string $exceptionClassName = null): void
+    public function testPaymentIdCapturePayment(mixed $paymentId, ?string $exceptionClassName = null): void
     {
         $curlClientStub = $this->getCurlClientStub();
         $curlClientStub
@@ -585,7 +585,7 @@ class ClientTest extends TestCase
      * @throws TooManyRequestsException
      * @throws UnauthorizedException
      */
-    public function testCancelPayment(mixed $paymentId, string $exceptionClassName = null): void
+    public function testCancelPayment(mixed $paymentId, ?string $exceptionClassName = null): void
     {
         $invalid = null !== $exceptionClassName;
         $curlClientStub = $this->getCurlClientStub();
@@ -863,7 +863,7 @@ class ClientTest extends TestCase
      * @throws UnauthorizedException
      * @throws ExtensionNotFoundException
      */
-    public function testRefundInfo(mixed $refundId, string $exceptionClassName = null): void
+    public function testRefundInfo(mixed $refundId, ?string $exceptionClassName = null): void
     {
         $curlClientStub = $this->getCurlClientStub();
         $curlClientStub
@@ -1521,7 +1521,7 @@ class ClientTest extends TestCase
      * @throws UnauthorizedException
      * @throws ExtensionNotFoundException
      */
-    public function testGetDealInfo(mixed $dealId, string $exceptionClassName = null): void
+    public function testGetDealInfo(mixed $dealId, ?string $exceptionClassName = null): void
     {
         $curlClientStub = $this->getCurlClientStub();
         $curlClientStub
@@ -1800,7 +1800,7 @@ class ClientTest extends TestCase
      * @throws UnauthorizedException
      * @throws ExtensionNotFoundException
      */
-    public function testGetPayoutInfo(mixed $payoutId, string $exceptionClassName = null): void
+    public function testGetPayoutInfo(mixed $payoutId, ?string $exceptionClassName = null): void
     {
         $curlClientStub = $this->getCurlClientStub();
         $curlClientStub
@@ -2026,7 +2026,7 @@ class ClientTest extends TestCase
      * @throws UnauthorizedException
      * @throws ExtensionNotFoundException
      */
-    public function testGetPersonalDataInfo(mixed $personalDataId, string $exceptionClassName = null): void
+    public function testGetPersonalDataInfo(mixed $personalDataId, ?string $exceptionClassName = null): void
     {
         $curlClientStub = $this->getCurlClientStub();
         $curlClientStub
@@ -2307,7 +2307,7 @@ class ClientTest extends TestCase
      * @throws TooManyRequestsException
      * @throws UnauthorizedException
      */
-    public function testGetSelfEmployedInfo($selfEmployedId, string $exceptionClassName = null): void
+    public function testGetSelfEmployedInfo($selfEmployedId, ?string $exceptionClassName = null): void
     {
         $curlClientStub = $this->getCurlClientStub();
         $curlClientStub
@@ -2612,7 +2612,7 @@ class ClientTest extends TestCase
      * @throws TooManyRequestsException
      * @throws UnauthorizedException
      */
-    public function testGetInvoiceInfo(mixed $invoiceId, string $exceptionClassName = null): void
+    public function testGetInvoiceInfo(mixed $invoiceId, ?string $exceptionClassName = null): void
     {
         $curlClientStub = $this->getCurlClientStub();
         $curlClientStub

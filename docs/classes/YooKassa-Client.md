@@ -284,7 +284,7 @@ DEFAULT_ATTEMPTS_COUNT = 3
 Текущая версия библиотеки.
 
 ```php
-SDK_VERSION = '3.7.1'
+SDK_VERSION = '3.8.1'
 ```
 
 
@@ -397,7 +397,7 @@ shopId магазина.
 #### public __construct() : mixed
 
 ```php
-public __construct(\YooKassa\Client\ApiClientInterface $apiClient = null, \YooKassa\Helpers\Config\ConfigurationLoaderInterface $configLoader = null) : mixed
+public __construct(?\YooKassa\Client\ApiClientInterface $apiClient = null, ?\YooKassa\Helpers\Config\ConfigurationLoaderInterface $configLoader = null) : mixed
 ```
 
 **Summary**
@@ -410,8 +410,8 @@ Constructor.
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Client\ApiClientInterface</code> | apiClient  |  |
-| <code lang="php">\YooKassa\Helpers\Config\ConfigurationLoaderInterface</code> | configLoader  |  |
+| <code lang="php">?\YooKassa\Client\ApiClientInterface</code> | apiClient  |  |
+| <code lang="php">?\YooKassa\Helpers\Config\ConfigurationLoaderInterface</code> | configLoader  |  |
 
 **Returns:** mixed - 
 
@@ -2729,10 +2729,10 @@ protected handleError(\YooKassa\Common\ResponseObject $response) : void
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 32](../reports/deprecated.md)
+* [Deprecated - 33](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2024-10-28 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2025-07-01 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2024 YooMoney
+&copy; 2025 YooMoney

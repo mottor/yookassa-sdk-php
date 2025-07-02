@@ -4,13 +4,18 @@
   "type": "library",
   "license": "MIT",
   "homepage": "https://yookassa.ru/developers/api",
-  "keywords": ["yookassa", "payments", "sdk"],
+  "keywords": ["yoomoney", "yookassa", "payments", "api", "sdk"],
   "authors": [
     {
-      "name": "YooMoney"
+      "name": "YooMoney",
+      "email": "cms@yoomoney.ru"
     }
   ],
-  "version": "3.7.1",
+  "dist": {
+    "type": "zip",
+    "url": "https://github.com/mottor/yookassa-sdk-php/archive/refs/tags/v3.8.1.zip"
+  },
+  "version": "3.8.1",
   "require": {
     "php": ">=8.0",
     "ext-curl": "*",
