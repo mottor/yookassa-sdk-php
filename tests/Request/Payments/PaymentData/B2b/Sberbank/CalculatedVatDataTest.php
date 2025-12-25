@@ -133,10 +133,10 @@ class CalculatedVatDataTest extends AbstractTestCase
         $instance->setRate($value);
         self::assertNotNull($instance->getRate());
         self::assertNotNull($instance->rate);
-        self::assertEquals($value, is_array($value) ? $instance->getRate()->toArray() : $instance->getRate());
-        self::assertEquals($value, is_array($value) ? $instance->rate->toArray() : $instance->rate);
-        self::assertContains($instance->getRate(), ['5', '7', '10', '18', '20']);
-        self::assertContains($instance->rate, ['5', '7', '10', '18', '20']);
+        self::assertEquals($value, $instance->getRate());
+        self::assertEquals($value, $instance->rate);
+        self::assertContains($instance->getRate(), ['5', '7', '10', '18', '20', '22']);
+        self::assertContains($instance->rate, ['5', '7', '10', '18', '20', '22']);
     }
 
     /**

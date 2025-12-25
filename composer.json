@@ -13,9 +13,9 @@
   ],
   "dist": {
     "type": "zip",
-    "url": "https://github.com/mottor/yookassa-sdk-php/archive/refs/tags/v3.8.1.zip"
+    "url": "https://github.com/mottor/yookassa-sdk-php/archive/refs/tags/v3.12.0.zip"
   },
-  "version": "3.8.1",
+  "version": "3.12.0",
   "require": {
     "php": ">=8.0",
     "ext-curl": "*",

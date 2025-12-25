@@ -400,7 +400,7 @@ class CreateRefundRequestBuilderTest extends TestCase
                         'title' => 'test',
                         'price' => [123],
                         'quantity' => 1.4,
-                        'vatCode' => 12,
+                        'vatCode' => 15,
                     ],
                 ],
             ],
@@ -533,6 +533,7 @@ class CreateRefundRequestBuilderTest extends TestCase
                             'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
                         ]),
                     ],
+                    'metadata' => null,
                     'deal' => [
                         'id' => Random::str(36, 50),
                         'refund_settlements' => [
@@ -584,6 +585,7 @@ class CreateRefundRequestBuilderTest extends TestCase
                             'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
                         ]),
                     ],
+                    'metadata' => [],
                     'deal' => [
                         'id' => Random::str(36, 50),
                         'refund_settlements' => [
@@ -610,12 +612,14 @@ class CreateRefundRequestBuilderTest extends TestCase
                 ],
                 'quantity' => Random::int(1, 9999),
                 'vatCode' => Random::int(1, 6),
+                'planned_status' => 6,
             ],
         ];
         $items[0]->setDescription('test1');
         $items[0]->setQuantity(Random::int(1, 9999));
         $items[0]->setPrice(new ReceiptItemAmount(Random::int(1, 999999)));
         $items[0]->setVatCode(Random::int(1, 6));
+        $items[0]->setPlannedStatus(Random::int(1, 6));
         for ($i = 0; $i < 10; $i++) {
             $request = [
                 'paymentId' => Random::str(36),
@@ -635,6 +639,7 @@ class CreateRefundRequestBuilderTest extends TestCase
                         'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
                     ]),
                 ],
+                'metadata' => ['test' => 'test'],
                 'deal' => [
                     'id' => Random::str(36, 50),
                     'refund_settlements' => [
@@ -783,4 +788,29 @@ class CreateRefundRequestBuilderTest extends TestCase
             self::assertCount(count($options['sources']), $instance->getSources());
         }
     }
+
+    /**
+     * @dataProvider validDataProvider
+     *
+     * @param mixed $options
+     *
+     * @throws Exception
+     */
+    public function testSetMetadata(mixed $options): void
+    {
+        $builder = new CreateRefundRequestBuilder();
+
+        $instance = $builder->build($this->getRequiredData());
+        self::assertNull($instance->getMetadata());
+
+        $builder->setMetadata($options['metadata']);
+        $instance = $builder->build($this->getRequiredData());
+
+        if (empty($options['metadata'])) {
+            self::assertNull($instance->getMetadata());
+        } else {
+            self::assertEquals($options['metadata'], $instance->getMetadata()->toArray());
+        }
+    }
+
 }

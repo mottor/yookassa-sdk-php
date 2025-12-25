@@ -37,8 +37,8 @@ use YooKassa\Common\AbstractEnum;
  * - 5 - 5%
  * - 7 - 7%
  * - 10 - 10%
- * - 18 - 18%
  * - 20 - 20%
+ * - 22 - 22%
  *
  * @category Class
  * @package  YooKassa\Model
@@ -56,11 +56,17 @@ class VatDataRate extends AbstractEnum
     /** 10% */
     public const RATE_10 = '10';
 
-    /** 18% */
+    /**
+     * 18%
+     * @deprecated Больше не применяется
+     */
     public const RATE_18 = '18';
 
     /** 20% */
     public const RATE_20 = '20';
+
+    /** 22% - С 1 января 2026 года ставка НДС 22% применяется вместо ставки 20%.*/
+    public const RATE_22 = '22';
 
     protected static array $validValues = [
         self::RATE_5 => true,
@@ -68,5 +74,6 @@ class VatDataRate extends AbstractEnum
         self::RATE_10 => true,
         self::RATE_18 => false,
         self::RATE_20 => true,
+        self::RATE_22 => true,
     ];
 }

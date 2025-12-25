@@ -312,7 +312,7 @@ class CreateCaptureRequestBuilderTest extends TestCase
                         'description' => 'test',
                         'price' => [123],
                         'quantity' => 1.4,
-                        'vatCode' => 12,
+                        'vatCode' => 15,
                     ],
                 ],
             ],
@@ -501,6 +501,7 @@ class CreateCaptureRequestBuilderTest extends TestCase
         $receiptItem->setQuantity(1);
         $receiptItem->setDescription('test');
         $receiptItem->setVatCode(3);
+        $receiptItem->setPlannedStatus(6);
 
         $result = [
             [
@@ -519,6 +520,7 @@ class CreateCaptureRequestBuilderTest extends TestCase
                                     'currency' => Random::value(CurrencyCode::getValidValues()),
                                 ],
                                 'vatCode' => Random::int(1, 6),
+                                'planned_status' => 6,
                             ],
                             $receiptItem,
                         ],
