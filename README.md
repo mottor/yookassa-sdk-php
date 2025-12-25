@@ -2,4 +2,4 @@
 
 This is fork of the YooKassa API PHP Client Library [yoomoney/yookassa-sdk-php](https://packagist.org/packages/yoomoney/yookassa-sdk-php) v3.12.0
 
-Compatibility with psr/log version 1.1.14 was returned for yookassa-sdk-php version 3.12.0
+Compatibility with psr/log version 1.1.14 was returned for [mottor/yookassa-sdk-php](https://packagist.org/packages/mottor/yookassa-sdk-php) version 3.12.0 
